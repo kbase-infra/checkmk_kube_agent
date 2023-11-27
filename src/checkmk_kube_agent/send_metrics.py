@@ -373,7 +373,7 @@ def machine_sections_worker(
         ["/usr/local/bin/check_mk_agent"],
         stdout=subprocess.PIPE,
     ) as process:
-        returncode = process.wait(5)
+        returncode = process.wait(30)
         if returncode != 0:
             # we don't capture stderr so it's printed to stderr of this process
             # and hopefully contains a helpful error message...
